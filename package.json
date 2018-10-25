@@ -7,8 +7,13 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "posttest": "npm run lint && nsp check",
+    "dev": "npm run lb-start & npm run vue-serve",
+    "prod": "npm run vue-build && npm start",
     "start": "node .",
-    "posttest": "npm run lint"
+    "lb-start": "nodemon",
+    "vue-serve": "cd client && vue-cli-service serve",
+    "vue-build": "cd client && vue-cli-service build"
   },
   "dependencies": {
     "compression": "^1.0.3",
